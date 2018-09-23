@@ -31,17 +31,32 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+int score=0;
 		// 2. Set the size of the window in the initializeGui() method below
-
+initializeGui();
 		for (int i = 0; i < 4; i++) {
 			
 			// 4. Ask the user who this person is and store their answer
-			String guess= JOptionPane.showInputDialog("who is this?");
+			String guess= JOptionPane.showInputDialog("Who is this?");
 			
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-
+			if(guess.equals("Arnold") && i==0) {
+				JOptionPane.showMessageDialog(null, "You are right!");
+				score++;
+			}
+			if(guess.equals("Leonardo") && i==1) {
+				JOptionPane.showMessageDialog(null, "You are right!");
+				score++;
+			}
+			if(guess.equals("Morgan") && i==2) {
+				JOptionPane.showMessageDialog(null, "You are right!");
+				score++;
+			}
+			if(guess.equals("Jack") && i==3) {
+				JOptionPane.showMessageDialog(null, "You are right!");
+				score++;
+			}
 			// 6. Otherwise:
 			// -- Tell them they are wrong and who the person is
 
