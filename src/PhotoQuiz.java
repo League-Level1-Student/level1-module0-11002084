@@ -52,15 +52,37 @@ public class PhotoQuiz {
 		// this until step 12)
 		panel.remove(image2);
 		// 10. find another image and create it (might take more than one line of code)
-		
+		String image3="http://pm1.narvii.com/6413/c27d88e4b65993a25ae33500768541ac57027bc1_00.jpg";
+		Component image4;
+		image4= createImage(image3);
+		panel.add(image4);
+		frame.add(panel);
 		// 11. add the second image to the quiz window
-
 		// 12. pack the quiz window
-
+		frame.pack();
 		// 13. ask another question
-
+		String answer2=JOptionPane.showInputDialog("Who is this character?");
 		// 14+ check answer, say if correct or incorrect, etc.
-
+		if(answer2.equals("Mae Borowski")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Incorrect");
+		}
+		String answer3=JOptionPane.showInputDialog("Will she beat you up with a baseball bat?");
+		if(answer3.equals("yes")) {
+			JOptionPane.showMessageDialog(null, "Yeah you're screwed");
+		}
+		else if(answer3.equals("probably")) {
+			JOptionPane.showMessageDialog(null, "yeah you're probably screwed");
+		}
+		else if(answer3.equals("no")) {
+			JOptionPane.showMessageDialog(null, "THEN RUN");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "That's not an answer.");
+		}
+		frame.remove(panel);
 	}
 
 	private static void pack() {
