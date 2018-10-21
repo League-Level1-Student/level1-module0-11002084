@@ -80,7 +80,7 @@ public class PhotoQuiz {
 			JOptionPane.showMessageDialog(null, "THEN RUN");
 		}
 		else {
-			JOptionPane.showMessageDialog(null, "That's not an answer.");
+			JOptionPane.showMessageDialog(null, "That's not an answer. *Decks you with baseball bat*");
 		}
 		frame.remove(panel);
 	}

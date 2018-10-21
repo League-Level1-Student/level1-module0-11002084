@@ -56,6 +56,18 @@ frame.setTitle("Demanding Buttons");
 		
 		
 		/* If the buttonPressed was the leftButton....*/
+		if(buttonPressed.equals(leftButton)) {
+			rightButton.setText("NO CLICK ME HE WILL CONSUME YOUR SOUL");
+			rightButton.setPreferredSize(BIG);
+			leftButton.setText("YES FEED MY SOUL");
+			leftButton.setPreferredSize(SMALL);
+		}
+		if(buttonPressed.equals(rightButton)) {
+			leftButton.setText("NO CLICK ME HE WILL KILL YOU");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setText("COME CLOSER");
+			rightButton.setPreferredSize(SMALL);
+		}
 			// Set the text of the rightButton to "No, click Me!"
 			// Set the PREFERRED size of the rightButton to BIG
 			// Set the text of the leftButton to "Click Me!"
