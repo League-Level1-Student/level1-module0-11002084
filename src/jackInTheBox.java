@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class jackInTheBox implements ActionListener {
+	int clicked=0;
 	public static void main(String[] args) {
 		jackInTheBox box=new jackInTheBox();
 		box.helpme();
@@ -30,8 +31,11 @@ public class jackInTheBox implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		JButton button2 = (JButton) event.getSource();
 		if (button2.equals(button)) {
-			new jackInTheBox().playSound("homer-woohoo.wav");
-			new jackInTheBox().showPicture("jackInTheBox.png");
+			clicked++;
+			if(clicked==5) {
+			playSound("homer-woohoo.wav");
+			showPicture("jackInTheBox.png");
+			}
 		}
 	}
 
