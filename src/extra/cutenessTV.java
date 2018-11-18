@@ -9,7 +9,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class cutenessTV implements ActionListener {
-
+	
+	JButton button1=new JButton();
+	JButton button2=new JButton();
+	JButton button3=new JButton();
+	
 	void showDucks() {
 		playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
 	}
@@ -30,12 +34,10 @@ public class cutenessTV implements ActionListener {
 			e.printStackTrace();
 		}
 	}
-	void showButton() {
+	public void showButton() {
 		JFrame frame=new JFrame();
+		frame.setVisible(true);
 		JPanel panel=new JPanel();
-		JButton button1=new JButton();
-		JButton button2=new JButton();
-		JButton button3=new JButton();
 		button1.addActionListener(this);
 		button2.addActionListener(this);
 		button3.addActionListener(this);
@@ -55,6 +57,12 @@ public class cutenessTV implements ActionListener {
 		JButton buttonpressed=(JButton) e.getSource();
 		if(buttonpressed.equals(button1)) {
 			showDucks();
+		}
+		if(buttonpressed.equals(button2)) {
+			showFrog();
+		}
+		if(buttonpressed.equals(button3)) {
+			showFluffyUnicorns();
 		}
 		
 	}
