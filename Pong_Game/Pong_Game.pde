@@ -1,28 +1,44 @@
 import ddf.minim.*;  
 Minim minim;
 AudioSample sound;
+PImage backgroundImage;
 
 int x=500;
 int y=450;
+int y2=450;
+int y3=450;
 int speed=5;
 int speed2=5;
+int speed3=0;
+int speed4=0;
+
 void setup(){
   size(1000,900);
   minim = new Minim (this);
   sound = minim.loadSample("pop.wav", 128);
+  backgroundImage= loadImage("WWI.jpg");
+  backgroundImage.resize(1000,900);
 }
+
 void draw(){
-  background(0,0,0);
-  fill(255, 255, 255);
-  stroke(255, 255, 255);
+  image(backgroundImage, 0, 0);
+  fill(255, 0, 0);
+  stroke(255, 0, 0);
   ellipse(x, y, 25, 25);
+  rect(900,y2, 20, 100);
+  rect(100,y3, 20, 100);
   x+=speed;
   y+=speed2;
+  y2+=speed3;
+  y3+=speed4;
+    
   if(x>width){
     speed*=-1;
+    sound.trigger();
   }
   else if(x<width-1000){
     speed*=-1;
+    sound.trigger();
   }
   if(y>height){
     speed2*=-1;
@@ -30,5 +46,35 @@ void draw(){
   }
   if(y<height-900){
     speed2*=-1;
+    sound.trigger();
   }
+}
+
+void keyPressed(){
+    if(keyCode==38){
+    speed3=-7;
+  }
+  if(keyCode==40){
+    speed3=7;
+  }  
+    if(keyCode==87){
+    speed4=-7;
+  }  
+    if(keyCode==83){
+    speed4=7;
+  }  
+}
+void keyReleased(){
+  if(keyCode==38){
+    speed3=0;
+  }
+  if(keyCode==40){
+    speed3=0;
+  }  
+    if(keyCode==87){
+    speed4=0;
+  }  
+    if(keyCode==83){
+    speed4=0;
+  }  
 }
